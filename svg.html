@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Interaktiv SVG | Eventnavn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./starter.css">
   <link rel="stylesheet" href="./style.css">
 </head>
@@ -12,7 +15,9 @@
 <body>
   <header class="site-header">
     <div class="header-content">
-      <a class="site-logo" href="./">Eventnavn</a>
+      <a class="site-logo" href="./">
+        <img src="image/The-Purple-Note.svg" alt="The Purple Note">
+      </a>
       <nav class="site-nav">
         <button>Menu</button>
         <ul class="menu" id="menu" popover>
@@ -32,7 +37,16 @@
       </header>
 
       <section class="svg-layout">
-        <div class="svg-placeholder"></div>
+        <div class="svg-placeholder">
+          <svg viewBox="0 0 1920 1080">
+            <use href="./image/karta.svg#scen"></use>
+            <use href="./image/karta.svg#vinylshop"></use>
+            <use href="./image/karta.svg#Lounge"></use>
+            <use href="./image/karta.svg#Entre"></use>
+            <use href="./image/karta.svg#bar"></use>
+            <use class="figur" href="./image/karta.svg#Figur"></use>
+          </svg>
+        </div>
 
         <article class="panel">
           <h2>Udforsk eventet</h2>

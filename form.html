@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formular | Eventnavn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./starter.css">
   <link rel="stylesheet" href="./style.css">
 </head>
@@ -12,7 +15,9 @@
 <body>
   <header class="site-header">
     <div class="header-content">
-      <a class="site-logo" href="./">Eventnavn</a>
+      <a class="site-logo" href="./">
+        <img src="image/The-Purple-Note.svg" alt="The Purple Note">
+      </a>
       <nav class="site-nav">
         <button>Menu</button>
         <ul class="menu" id="menu" popover>
@@ -28,11 +33,43 @@
     <section class="form-page">
       <header class="form-intro">
         <h1>Formular</h1>
-        <p>Lav en formular, der sender brugeren videre til opsamlingssiden.</p>
+        <p>Fylld i formulär för at vinde din unika vinyl plade</p>
       </header>
+      <form class="form-placeholder" action="./opsamling.html">
+        <label for="field-nickname">Navn</label>
+        <input type="text" id="field-nickname" name="nickname">
 
-      <form class="form-placeholder" action="./opsamling.html"></form>
+        <label for="field-telefonnummer">telefon</label>
+        <input type="text" id="field-telefonnummer" name="telefonnummer">
+
+        <label for="field-Email">Email</label>
+        <input type="text" id="field-Email" name="Email">
+
+        <fieldset>
+          <legend>Vilken typ av jazz gillar du mest?</legend>
+          <label for="field-Jazz-typ-1">
+            <input type="radio" id="field-Jazz-typ-1" name="Jazz typ" value="Klassisk jazz">
+            Klasssisk Jazz
+          </label>
+          <label for="field-Jazz-typ-2">
+            <input type="radio" id="field-Jazz-typ-2" name="Jazz typ" value="Jazzfusion">
+            Jazzfusion
+          </label>
+          <label for="field-Jazz-typ-3">
+            <input type="radio" id="field-Jazz-typ-3" name="Jazz typ" value="Moderne jazz">
+            Moderne Jazz
+          </label>
+
+        </fieldset>
+
+        <label for="field--nske-plade">Vilken Vinylplade önskar du helst att vinna?</label>
+        <input type="text" id="field--nske-plade" name="Önske plade">
+
+        <button type="submit">Send</button>
+
+      </form>
     </section>
+
   </main>
 
   <footer class="site-footer">

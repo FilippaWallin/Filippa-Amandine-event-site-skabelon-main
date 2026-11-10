@@ -1,7 +1,7 @@
 /* Variabler */
 html {
   --color-page: #f0e5cc;
-  --color-surface: #590425;
+  --color-surface: #5d1933;
   --color-text: #d09e39;
   --color-muted: #666;
   --color-border: #d8d8d8;
@@ -205,7 +205,6 @@ main > * {
 /* Flader */
 .panel,
 .svg-placeholder,
-.form-placeholder,
 .opsamling-placeholder {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -225,9 +224,12 @@ main > * {
 }
 
 .form-placeholder {
-  min-height: -webkit-fill-available;
-  min-height: stretch;
-  padding: var(--space-1);
+  display: grid;
+  gap: var(--space-1);
+  align-self: start;
+  padding: var(--space-2);
+  border: 1px solid var(--color-surface);
+  color: var(--color-surface);
 }
 
 /* Details */
@@ -325,4 +327,27 @@ main > * {
   display: flex;
   gap: var(--space-1);
   margin-top: 2rem; /* Ändra denna siffra (t.ex. till 1.5rem eller 3rem) tills avståndet blir som du vill ha det */
+}
+
+/* Formulärelement */
+input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--color-surface);
+  background: transparent;
+  border-radius: 5px;
+}
+
+button {
+  border: none;
+  background: var(--color-text);
+  color: var(--color-page);
+  padding: 0.4rem 1.5rem;
+  border-radius: 5px;
+}
+
+.figur {
+  transform-box: viwe-box;
+  translate: 0% 0%;
+  transition: translate 3s ease;
 }
