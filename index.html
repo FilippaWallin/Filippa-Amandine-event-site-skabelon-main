@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eventnavn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./starter.css">
   <link rel="stylesheet" href="./style.css">
 </head>
@@ -12,7 +15,9 @@
 <body>
   <header class="site-header">
     <div class="header-content">
-      <a class="site-logo" href="./">Eventnavn</a>
+      <a class="site-logo" href="./">
+        <img src="image/The-Purple-Note.svg" alt="The Purple Note">
+      </a>
       <nav class="site-nav">
         <button>Menu</button>
         <ul class="menu" id="menu" popover>
@@ -24,7 +29,75 @@
     </div>
   </header>
 
-  <main></main>
+  <main>
+    <section class="hero-section">
+      <div class="hero-content">
+        <p class="hero-subtitle">A Jazz Evening at The Library Bar</p>
+        <h1>The purple Note</h1>
+        <div class="hero-buttons">
+          <a href="#tickets" class="button">Köp biljetter</a>
+          <a href="#program" class="button">Se program</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="image/IMG_4224.png" alt="Jazz illustration">
+        <img src="image/IMG_4226.png" alt="Jazz illustration2">
+      </div>
+    </section>
+
+    <section class="highlights-section">
+      <h2>Nedslag fra eventet</h2>
+      <div class="cards-container"
+        style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 1rem;">
+
+
+        <article class="panel">
+          <h3>Live</h3>
+          <p>Live jazz hele aftenen</p>
+          <button type="button" class="button" popovertarget="card-live">Läs mer</button>
+        </article>
+
+
+        <article class="panel">
+          <h3>Shop</h3>
+          <p>Udsolgte og fed vinyler</p>
+          <button type="button" class="button" popovertarget="card-shop">Läs mer</button>
+        </article>
+
+
+        <article class="panel">
+          <h3>Bar</h3>
+          <p>Vin och drinks i baren</p>
+          <button type="button" class="button" popovertarget="card-bar">Läs mer</button>
+        </article>
+
+      </div>
+    </section>
+
+    <div id="card-live" popover>
+      <section class="panel card-popover">
+        <h3>Live Jazz</h3>
+        <p>Upplev handplockade jazzmusiker som spelar under hela kvällen på The Library Bar.</p>
+        <button type="button" class="button" popovertarget="card-live" popovertargetaction="hide">Stäng</button>
+      </section>
+    </div>
+
+    <div id="card-shop" popover>
+      <section class="panel card-popover">
+        <h3>Vinyl Shop</h3>
+        <p>Hitta sällsynta vinylskivor och unika samlarobjekt direkt på plats.</p>
+        <button type="button" class="button" popovertarget="card-shop" popovertargetaction="hide">Stäng</button>
+      </section>
+    </div>
+
+    <div id="card-bar" popover>
+      <section class="panel card-popover">
+        <h3>Bar</h3>
+        <p>Njut av skräddarsydda jazz-cocktails och naturviner speciellt framtagna för kvällen.</p>
+        <button type="button" class="button" popovertarget="card-bar" popovertargetaction="hide">Stäng</button>
+      </section>
+    </div>
+  </main>
 
   <footer class="site-footer">
     <div class="footer-content">

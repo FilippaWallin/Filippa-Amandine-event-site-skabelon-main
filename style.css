@@ -1,8 +1,8 @@
 /* Variabler */
 html {
-  --color-page: #f7f7f7;
-  --color-surface: #fff;
-  --color-text: #222;
+  --color-page: #f0e5cc;
+  --color-surface: #590425;
+  --color-text: #d09e39;
   --color-muted: #666;
   --color-border: #d8d8d8;
   --space-05: 0.5rem;
@@ -123,6 +123,7 @@ main > * {
   display: grid;
   grid-template-columns: inherit;
   background: var(--color-surface);
+  width: 100%;
 }
 
 .header-content,
@@ -150,15 +151,18 @@ main > * {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--space-1);
-  color: var(--color-muted);
 }
 
 /* Navigation */
 [popover] {
-  margin: 0;
+  margin: auto;
   padding: 0;
   border: none;
   background: transparent;
+}
+
+[popover]::backdrop {
+  background-color: rgba(0, 0, 0, 0.9); /* Mörk och dämpad bakgrund */
 }
 
 .site-nav button {
@@ -189,7 +193,7 @@ main > * {
 .menu a {
   display: block;
   padding: 0.4rem 0;
-  color: inherit;
+  color: var(--color-text);
   text-decoration: none;
   border-bottom: 2px solid #0000;
 }
@@ -205,6 +209,7 @@ main > * {
 .opsamling-placeholder {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
+  border-radius: 15px;
 }
 
 .panel {
@@ -250,4 +255,74 @@ main > * {
   background: var(--color-surface);
   color: inherit;
   text-decoration: none;
+  border-radius: 10px;
+}
+
+/* forside*/
+@media (width > 400px) {
+  .main-nav button {
+    /* Skjul menuknappen */
+    display: none;
+  }
+  .menu-list {
+    /* Nulstil først, og byg derefter den vandrette liste */
+    all: unset;
+    display: flex;
+    gap: 2ch;
+    list-style: none;
+  }
+  .menu-item {
+    /* Fjern padding */
+    padding: 0;
+  }
+}
+
+/*forside*/
+.card-popover::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-section {
+  display: grid;
+  gap: var(--space-2);
+  align-items: center;
+
+  /* På skärmar bredare än 800px lägger vi text och bild bredvid varandra */
+  @media (width > 800px) {
+    grid-template-columns: 1.1fr 0.9fr; /* Balanserar utrymmet mellan text och bilder */
+  }
+}
+
+/* Styla rubriken (h1) */
+.hero-content h1 {
+  font-family: "Parisienne", cursive;
+  font-size: 3.5rem;
+}
+
+/* Underrubrik (subtitle) */
+.hero-subtitle {
+  font-size: 1.1rem;
+  text-transform: uppercase; /* Om du har versaler i Figma, ta bort raden om inte */
+  letter-spacing: 0.05em;
+  color: var(--color-text);
+}
+
+.hero-image {
+  display: flex;
+  gap: var(--space-1);
+  justify-content: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 300px; /* Ändra denna siffra om du vill ha dem ännu mindre (t.ex. 130px) eller större */
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px; /* Snygga rundade hörn */
+}
+
+.hero-buttons {
+  display: flex;
+  gap: var(--space-1);
+  margin-top: 2rem; /* Ändra denna siffra (t.ex. till 1.5rem eller 3rem) tills avståndet blir som du vill ha det */
 }
