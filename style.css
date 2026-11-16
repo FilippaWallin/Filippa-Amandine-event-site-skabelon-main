@@ -1,7 +1,7 @@
 /* Variabler */
 html {
   --color-page: beige;
-  --color-surface: #5d1933;
+  --color-surface: #3c0a1d;
   --color-text: #d09e39;
   --color-muted: #666;
   --color-border: #d8d8d8;
@@ -63,7 +63,7 @@ main > * {
 }
 
 .svg-intro p {
-  color: var(--color-muted);
+  color: var(--color-background);
 }
 
 .svg-layout {
@@ -91,7 +91,7 @@ main > * {
 }
 
 .form-intro p {
-  color: var(--color-muted);
+  color: var(--color-surface);
 }
 
 .opsamling-page {
@@ -162,7 +162,7 @@ main > * {
 
 /*logo redigering*/
 .site-logo img {
-  height: 1.5rem;
+  height: 1.8rem;
   width: auto;
   display: block;
 }
@@ -181,8 +181,9 @@ main > * {
 
 .site-nav button {
   padding: 0.4rem 0.7rem;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--color-text);
   background: var(--color-surface);
+  color: var(--color-text);
   @media (width > 600px) {
     display: none;
   }
@@ -373,7 +374,7 @@ main > * {
 /*bild i kort*/
 .panel img {
   width: 100%;
-  height: 5rem;
+  height: 12rem;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -383,18 +384,14 @@ main > * {
   max-height: 20rem;
 }
 
-.card-popover .button {
-  color: var(--color-text);
-}
-
 .hero-section {
   display: grid;
-  gap: var(--space-3);
+  gap: var(--space-1);
   align-items: center;
 
-  /* På skärmar bredare än 800px lägger vi text och bild bredvid varandra */
   @media (width > 800px) {
-    grid-template-columns: 1fr 1fr; /* Balanserar utrymmet mellan text och bilder */
+    grid-template-columns: auto auto;
+    justify-content: center;
   }
 }
 
@@ -406,20 +403,19 @@ main > * {
 
 /* Underrubrik (subtitle) */
 .hero-subtitle {
-  font-size: 1.1rem;
-  text-transform: uppercase; /* Om du har versaler i Figma, ta bort raden om inte */
+  font-size: 1.2rem;
   letter-spacing: 0.05em;
 }
 
 .hero-image {
   display: flex;
-  justify-content: end;
+  justify-content: center;
 }
 
 .hero-image img {
   width: 100%;
   height: auto;
-  border-radius: 15px; /* Snygga rundade hörn */
+  max-width: 20rem;
 }
 
 .hero-buttons {
