@@ -1,6 +1,6 @@
 /* Variabler */
 html {
-  --color-page: #f0e5cc;
+  --color-page: beige;
   --color-surface: #5d1933;
   --color-text: #d09e39;
   --color-muted: #666;
@@ -11,7 +11,7 @@ html {
   --space-3: 3rem;
 
   background: var(--color-page);
-  color: var(--color-text);
+  color: var(--color-surface);
 }
 
 /* Globalt layout */
@@ -28,6 +28,15 @@ h2,
 h3,
 p {
   margin: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  font-family: "Bacasime Antique", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 main {
@@ -119,24 +128,30 @@ main > * {
 .site-header,
 .site-footer {
   grid-column: 1 / -1;
-
   display: grid;
   grid-template-columns: inherit;
   background: var(--color-surface);
+  color: var(--color-text);
   width: 100%;
 }
 
 .header-content,
 .footer-content {
   grid-column: 2;
+  font-family: "Bacasime Antique", serif;
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-1);
+  padding-block: var(--space-2);
 }
 
 .header-content {
-  min-height: 4rem;
-  display: flex;
-  justify-content: space-between;
+  min-height: 6rem;
   align-items: center;
-  gap: var(--space-1);
+}
+
+.footer-content {
+  flex-wrap: wrap;
 }
 
 .site-logo {
@@ -145,12 +160,11 @@ main > * {
   text-decoration: none;
 }
 
-.footer-content {
-  padding-block: var(--space-1);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: var(--space-1);
+/*logo redigering*/
+.site-logo img {
+  height: 1.5rem;
+  width: auto;
+  display: block;
 }
 
 /* Navigation */
@@ -162,7 +176,7 @@ main > * {
 }
 
 [popover]::backdrop {
-  background-color: rgba(0, 0, 0, 0.9); /* Mörk och dämpad bakgrund */
+  background-color: rgba(0, 0, 0, 0.5); /* Mörk och dämpad bakgrund */
 }
 
 .site-nav button {
@@ -178,16 +192,41 @@ main > * {
   margin: 0;
   padding: var(--space-1);
   list-style: none;
-  background: var(--color-surface);
   border: 1px solid var(--color-border);
+  border-radius: 0.75rem;
+  background: var(--color-surface);
+  box-shadow: 0 1rem 2rem #0002;
+
+  @media (width <= 600px) {
+    position-area: bottom span-left;
+    opacity: 0;
+    transition: 0.5s;
+    transition-behavior: allow-discrete;
+  }
+
   @media (width > 600px) {
     display: flex;
     gap: var(--space-1);
     padding: 0;
     border: none;
+    border-radius: 0;
     background: none;
+    box-shadow: none;
     position: static;
   }
+}
+
+.menu:popover-open {
+  opacity: 1;
+  rotate: none;
+
+  @starting-style {
+    opacity: 0;
+  }
+}
+
+.menu::backdrop {
+  background: none;
 }
 
 .menu a {
@@ -198,8 +237,20 @@ main > * {
   border-bottom: 2px solid #0000;
 }
 
+/*så meny knappen försvinner vid listvy */
 .menu a[aria-current="page"] {
   border-bottom-color: var(--color-border);
+}
+
+.site-nav button {
+  transition: opacity 0.2s;
+}
+
+/*slutar här*/
+
+.site-nav:has(.menu:popover-open) button {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Flader */
@@ -215,6 +266,7 @@ main > * {
   padding: var(--space-1);
   display: grid;
   gap: var(--space-1);
+  color: var(--color-page);
 }
 
 .svg-placeholder,
@@ -235,7 +287,7 @@ main > * {
 /* Details */
 .accordion {
   display: grid;
-  gap: var(--space-05);
+  gap: var(--space-1);
 }
 
 .accordion-item {
@@ -243,9 +295,35 @@ main > * {
   background: var(--color-surface);
 }
 
+.accordion-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: var(--space-05) var(--space-1);
+  display: flex;
+  align-items: center;
+}
+
+/* Pil vänster */
+.accordion-item summary::after {
+  content: "›";
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-left: auto;
+  transition: rotate 0.3s;
+}
+
+/* pilen vrids nedåt när fliken är öppen */
+.accordion-item[open] summary::after {
+  rotate: 90deg;
+}
+
 .accordion-item p {
   padding: 0 var(--space-1) var(--space-1);
-  color: var(--color-muted);
+  color: var(--color-background);
+}
+
+#besked {
+  display: none;
 }
 
 /* Knap/link */
@@ -258,9 +336,9 @@ main > * {
   color: inherit;
   text-decoration: none;
   border-radius: 10px;
+  color: var(--color-page);
 }
 
-/* forside*/
 @media (width > 400px) {
   .main-nav button {
     /* Skjul menuknappen */
@@ -280,18 +358,43 @@ main > * {
 }
 
 /*forside*/
+
+/*popover cards */
 .card-popover::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.card-popover {
+  background: beige;
+  color: var(--color-surface);
+  max-width: 30rem;
+}
+
+/*bild i kort*/
+.panel img {
+  width: 100%;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card-popover img {
+  height: auto;
+  max-height: 20rem;
+}
+
+.card-popover .button {
+  color: var(--color-text);
+}
+
 .hero-section {
   display: grid;
-  gap: var(--space-2);
+  gap: var(--space-3);
   align-items: center;
 
   /* På skärmar bredare än 800px lägger vi text och bild bredvid varandra */
   @media (width > 800px) {
-    grid-template-columns: 1.1fr 0.9fr; /* Balanserar utrymmet mellan text och bilder */
+    grid-template-columns: 1fr 1fr; /* Balanserar utrymmet mellan text och bilder */
   }
 }
 
@@ -306,21 +409,17 @@ main > * {
   font-size: 1.1rem;
   text-transform: uppercase; /* Om du har versaler i Figma, ta bort raden om inte */
   letter-spacing: 0.05em;
-  color: var(--color-text);
 }
 
 .hero-image {
   display: flex;
-  gap: var(--space-1);
-  justify-content: center;
+  justify-content: end;
 }
 
 .hero-image img {
   width: 100%;
-  max-width: 300px; /* Ändra denna siffra om du vill ha dem ännu mindre (t.ex. 130px) eller större */
   height: auto;
-  object-fit: cover;
-  border-radius: 8px; /* Snygga rundade hörn */
+  border-radius: 15px; /* Snygga rundade hörn */
 }
 
 .hero-buttons {
@@ -331,23 +430,83 @@ main > * {
 
 /* Formulärelement */
 input[type="text"] {
-  width: 100%;
+  width: fit-content;
   box-sizing: border-box;
-  border: 1px solid var(--color-surface);
   background: transparent;
   border-radius: 5px;
+  border: 1px solid rgb(117, 26, 73);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #6b133b;
+  box-shadow: 0 0 5px rgba(149, 24, 95, 0.5);
 }
 
 button {
+  width: fit-content;
   border: none;
-  background: var(--color-text);
+  background: rgb(27, 110, 27);
   color: var(--color-page);
   padding: 0.4rem 1.5rem;
   border-radius: 5px;
 }
 
+input[type="radio"] {
+  accent-color: rgb(142, 19, 93);
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+}
+
+Fieldset {
+  padding: var(--space-1);
+  border-color: solid#5d1933;
+  border-radius: 5px;
+}
+
+/* Interaktiv SVG */
+
+.svg-kort {
+  --x: 0%;
+  --y: 0%;
+}
+
 .figur {
-  transform-box: viwe-box;
-  translate: 0% 0%;
-  transition: translate 3s ease;
+  transform-box: view-box;
+  translate: var(--x) var(--y);
+  transition: translate 2s ease;
+}
+
+.svg-kort[data-position="indgang"] {
+  --x: 0%;
+  --y: 0%;
+}
+
+.svg-kort[data-position="scen"] {
+  --x: 32%;
+  --y: -60%;
+}
+
+.svg-kort[data-position="vinylshop"] {
+  --x: -12%;
+  --y: -50%;
+}
+
+.svg-kort[data-position="lounge"] {
+  --x: 25%;
+  --y: -17%;
+}
+
+.svg-kort[data-position="bar"] {
+  --x: 52%;
+  --y: -43%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .figur {
+    transition: none;
+  }
 }

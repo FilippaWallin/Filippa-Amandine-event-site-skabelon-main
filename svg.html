@@ -19,7 +19,7 @@
         <img src="image/The-Purple-Note.svg" alt="The Purple Note">
       </a>
       <nav class="site-nav">
-        <button>Menu</button>
+        <button popovertarget="menu">Menu</button>
         <ul class="menu" id="menu" popover>
           <li><a href="./">Forside</a></li>
           <li><a href="./svg.html" aria-current="page">Interaktiv SVG</a></li>
@@ -38,7 +38,7 @@
 
       <section class="svg-layout">
         <div class="svg-placeholder">
-          <svg viewBox="0 0 1920 1080">
+          <svg class="svg-kort" viewBox="0 0 1920 1080">
             <use href="./image/karta.svg#scen"></use>
             <use href="./image/karta.svg#vinylshop"></use>
             <use href="./image/karta.svg#Lounge"></use>
@@ -52,19 +52,35 @@
           <h2>Udforsk eventet</h2>
           <div class="accordion">
             <!-- TODO: Lav om til details/summary -->
-            <div class="accordion-item">
-              <h3>Punkt 1</h3>
-              <p>Beskriv første område, aktivitet eller del af dit event.</p>
-            </div>
-            <div class="accordion-item">
-              <h3>Punkt 2</h3>
-              <p>Beskriv andet område, aktivitet eller del af dit event.</p>
-            </div>
-            <div class="accordion-item">
-              <h3>Punkt 3</h3>
-              <p>Beskriv tredje område, aktivitet eller del af dit event.</p>
-            </div>
+
+            <details class="accordion-item" id="details-indgang" name="steder" data-position="indgang">
+              <Summary>Entre</Summary>
+              <p>Här börjar ditt besök.</p>
+            </details>
+
+            <details class="accordion-item" id="details-scen" name="steder" data-position="scen">
+              <Summary>Scen</Summary>
+              <p>Vid scenen kan du höra live jazz under hela kvällen.</p>
+            </details>
+
+            <details class="accordion-item" id="details-vinylshop" name="steder" data-position="vinylshop">
+              <Summary>Vinylshop</Summary>
+              <p>Här kan du bläddra bland vinyler.</p>
+            </details>
+
+            <details class="accordion-item" id="details-lounge" name="steder" data-position="lounge">
+              <Summary>Lounge</Summary>
+              <p>Här kan du slappna av.</p>
+            </details>
+
+            <details class="accordion-item" id="details-bar" name="steder" data-position="bar">
+              <Summary>Bar</Summary>
+              <p>I baren hittar du ett utbud av viner och drinkar att njuta av under eventets gång</p>
+            </details>
           </div>
+          </div>
+          <p id="besked"></p>
+        </article>
         </article>
       </section>
     </section>
@@ -72,7 +88,9 @@
 
   <footer class="site-footer">
     <div class="footer-content">
-      <p>Eventnavn</p>
+      <a class="site-logo" href="./">
+        <img src="image/The-Purple-Note.svg" alt="The Purple Note">
+      </a>
       <p>Footer</p>
     </div>
   </footer>

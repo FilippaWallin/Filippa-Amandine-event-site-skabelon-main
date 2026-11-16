@@ -19,7 +19,7 @@
         <img src="image/The-Purple-Note.svg" alt="The Purple Note">
       </a>
       <nav class="site-nav">
-        <button>Menu</button>
+        <button popovertarget="menu">Menu</button>
         <ul class="menu" id="menu" popover>
           <li><a href="./" aria-current="page">Forside</a></li>
           <li><a href="./svg.html">Interaktiv SVG</a></li>
@@ -40,8 +40,7 @@
         </div>
       </div>
       <div class="hero-image">
-        <img src="image/IMG_4224.png" alt="Jazz illustration">
-        <img src="image/IMG_4226.png" alt="Jazz illustration2">
+        <img src="image/livejazz.jpg" alt="Discokula i guldigt ljus">
       </div>
     </section>
 
@@ -52,6 +51,7 @@
 
 
         <article class="panel">
+          <img src="image/livejazz.jpg" alt="Live jazz">
           <h3>Live</h3>
           <p>Live jazz hele aftenen</p>
           <button type="button" class="button" popovertarget="card-live">Läs mer</button>
@@ -59,6 +59,7 @@
 
 
         <article class="panel">
+          <img src="image/vinyl.jpg" alt="Vinyl Shop">
           <h3>Shop</h3>
           <p>Udsolgte og fed vinyler</p>
           <button type="button" class="button" popovertarget="card-shop">Läs mer</button>
@@ -66,6 +67,7 @@
 
 
         <article class="panel">
+          <img src="image/bar.jpg" alt="Baren med drinkar">
           <h3>Bar</h3>
           <p>Vin och drinks i baren</p>
           <button type="button" class="button" popovertarget="card-bar">Läs mer</button>
@@ -76,6 +78,7 @@
 
     <div id="card-live" popover>
       <section class="panel card-popover">
+        <img src="image/livejazz.jpg" alt="Live jazz">
         <h3>Live Jazz</h3>
         <p>Upplev handplockade jazzmusiker som spelar under hela kvällen på The Library Bar.</p>
         <button type="button" class="button" popovertarget="card-live" popovertargetaction="hide">Stäng</button>
@@ -84,6 +87,7 @@
 
     <div id="card-shop" popover>
       <section class="panel card-popover">
+        <img src="image/vinyl.jpg" alt="Vinyl Shop">
         <h3>Vinyl Shop</h3>
         <p>Hitta sällsynta vinylskivor och unika samlarobjekt direkt på plats.</p>
         <button type="button" class="button" popovertarget="card-shop" popovertargetaction="hide">Stäng</button>
@@ -92,6 +96,7 @@
 
     <div id="card-bar" popover>
       <section class="panel card-popover">
+        <img src="image/bar.jpg" alt="Baren med drinkar">
         <h3>Bar</h3>
         <p>Njut av skräddarsydda jazz-cocktails och naturviner speciellt framtagna för kvällen.</p>
         <button type="button" class="button" popovertarget="card-bar" popovertargetaction="hide">Stäng</button>
@@ -101,8 +106,10 @@
 
   <footer class="site-footer">
     <div class="footer-content">
-      <p>Eventnavn</p>
-      <p>Footer</p>
+      <a class="site-logo" href="./">
+        <img src="image/The-Purple-Note.svg" alt="The Purple Note">
+      </a>
+      <p>footer</p>
     </div>
   </footer>
   <script src="./script.js"></script>
