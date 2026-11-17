@@ -410,6 +410,12 @@ main > * {
   text-decoration: none;
   border-radius: 10px;
   color: var(--color-page);
+  transition: 0.2s;
+}
+
+.button:hover,
+.button:focus-visible {
+  scale: 1.05;
 }
 
 @media (width > 400px) {
