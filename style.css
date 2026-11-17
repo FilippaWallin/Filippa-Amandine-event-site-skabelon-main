@@ -14,7 +14,7 @@ html {
   color: var(--color-surface);
 }
 
-/* Globalt layout */
+/* Global layout */
 body {
   margin: 0;
   min-height: 100svh;
@@ -28,16 +28,10 @@ h1,
 h2,
 h3,
 p {
-  margin: 0;
-}
-
-h1,
-h2,
-h3,
-p {
   font-family: "Bacasime Antique", serif;
   font-weight: 400;
   font-style: normal;
+  margin: 0;
 }
 
 main {
@@ -52,30 +46,6 @@ main > * {
   padding-block: var(--space-3);
 }
 
-.svg-page {
-  display: grid;
-  gap: var(--space-2);
-}
-
-.svg-intro {
-  display: grid;
-  gap: var(--space-1);
-  max-width: 60ch;
-}
-
-.svg-intro p {
-  color: var(--color-background);
-}
-
-.svg-layout {
-  display: grid;
-  gap: var(--space-2);
-  align-items: start;
-  @media (width > 800px) {
-    grid-template-columns: 1fr min(40%, 36ch);
-  }
-}
-
 .form-page {
   display: grid;
   gap: var(--space-3);
@@ -84,81 +54,8 @@ main > * {
   }
 }
 
-.form-intro {
-  display: grid;
-  gap: var(--space-1);
-  align-content: start;
-  max-width: 60ch;
-}
-
 .form-intro p {
   color: var(--color-background);
-}
-
-.opsamling-page {
-  display: grid;
-  gap: var(--space-2);
-  align-items: start;
-
-  @media (width > 800px) {
-    grid-template-columns: minmax(0, 44ch) minmax(20rem, 1fr);
-  }
-}
-
-.opsamling-intro {
-  display: grid;
-  gap: var(--space-1);
-  max-width: 60ch;
-}
-
-.opsamling-intro p {
-  color: var(--color-background);
-}
-
-/* Biljett */
-.ticket {
-  padding: var(--space-2);
-  display: grid;
-  gap: var(--space-1);
-  align-self: start;
-}
-
-.ticket-label {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.9rem;
-}
-
-.ticket h2 {
-  font-family: "Parisienne", cursive;
-  font-size: 2.5rem;
-}
-
-.ticket dl {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: var(--space-05) var(--space-2);
-  margin: 0;
-  padding-top: var(--space-1);
-  border-top: 1px solid var(--color-border);
-}
-
-.ticket dt {
-  color: var(--color-text);
-}
-
-.ticket dd {
-  margin: 0;
-}
-
-.error-page {
-  display: grid;
-  gap: var(--space-1);
-  max-width: 60ch;
-}
-
-.error-page p {
-  color: var(--color-page);
 }
 
 /* Header og footer */
@@ -182,18 +79,20 @@ main > * {
   padding-block: var(--space-2);
 }
 
+/*som gäller endast header*/
 .header-content {
   min-height: 6rem;
   align-items: center;
 }
 
+/*gäller bara footer*/
 .footer-content {
   flex-wrap: wrap;
 }
 
+/*logo med bild lönk*/
 .site-logo {
   color: inherit;
-  font-weight: 700;
   text-decoration: none;
 }
 
@@ -202,6 +101,11 @@ main > * {
   height: 1.8rem;
   width: auto;
   display: block;
+}
+
+/*logo i footern centreras*/
+.site-footer .site-logo {
+  align-self: center;
 }
 
 /* Footer-kolumner */
@@ -234,10 +138,6 @@ main > * {
   text-decoration: underline;
 }
 
-.site-footer .site-logo {
-  align-self: center;
-}
-
 /* Navigation */
 [popover] {
   margin: auto;
@@ -260,6 +160,11 @@ main > * {
   }
 }
 
+.site-nav:has(.menu:popover-open) button {
+  opacity: 0;
+  pointer-events: none;
+}
+
 .menu {
   margin: 0;
   padding: var(--space-1);
@@ -269,6 +174,7 @@ main > * {
   background: var(--color-surface);
   box-shadow: 0 1rem 2rem #0002;
 
+  /*när meny knappen fälls ut under knappen och tonas in*/
   @media (width <= 600px) {
     position-area: bottom span-left;
     opacity: 0;
@@ -276,6 +182,7 @@ main > * {
     transition-behavior: allow-discrete;
   }
 
+  /* dator: vanlig vågrät meny */
   @media (width > 600px) {
     display: flex;
     gap: var(--space-1);
@@ -297,6 +204,7 @@ main > * {
   }
 }
 
+/*ingen mörk hinna bakom menyn*/
 .menu::backdrop {
   background: none;
 }
@@ -318,14 +226,35 @@ main > * {
   transition: opacity 0.2s;
 }
 
-/*slutar här*/
-
-.site-nav:has(.menu:popover-open) button {
-  opacity: 0;
-  pointer-events: none;
+/* Knap/link */
+button {
+  width: fit-content;
+  border: none;
+  background: rgb(27, 110, 27);
+  color: var(--color-page);
+  padding: 0.4rem 1.5rem;
+  border-radius: 5px;
 }
 
-/* Flader */
+.button {
+  justify-self: start;
+  display: inline-block;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: inherit;
+  text-decoration: none;
+  border-radius: 10px;
+  color: var(--color-page);
+  transition: 0.2s;
+}
+
+.button:hover,
+.button:focus-visible {
+  scale: 1.05;
+}
+
+/* Flader / paneler & kort*/
 .panel,
 .svg-placeholder,
 .opsamling-placeholder {
@@ -348,74 +277,12 @@ main > * {
   color: var(--color-page);
 }
 
-.form-placeholder {
-  display: grid;
-  gap: var(--space-1);
-  align-self: start;
-  padding: var(--space-2);
-  border: 1px solid var(--color-surface);
-  color: var(--color-surface);
-}
-
-/* Details */
-.accordion {
-  display: grid;
-  gap: var(--space-1);
-}
-
-.accordion-item {
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
-}
-
-.accordion-item summary {
-  list-style: none;
-  cursor: pointer;
-  padding: var(--space-05) var(--space-1);
-  display: flex;
-  align-items: center;
-}
-
-/* Pil vänster */
-.accordion-item summary::after {
-  content: "›";
-  font-size: 1.5rem;
-  line-height: 1;
-  margin-left: auto;
-  transition: rotate 0.3s;
-}
-
-/* pilen vrids nedåt när fliken är öppen */
-.accordion-item[open] summary::after {
-  rotate: 90deg;
-}
-
-.accordion-item p {
-  padding: 0 var(--space-1) var(--space-1);
-  color: var(--color-background);
-}
-
-#besked {
-  display: none;
-}
-
-/* Knap/link */
-.button {
-  justify-self: start;
-  display: inline-block;
-  padding: 0.5rem 0.8rem;
-  border: 1px solid var(--color-border);
-  background: var(--color-surface);
-  color: inherit;
-  text-decoration: none;
-  border-radius: 10px;
-  color: var(--color-page);
-  transition: 0.2s;
-}
-
-.button:hover,
-.button:focus-visible {
-  scale: 1.05;
+/*bild i kort*/
+.panel img {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 @media (width > 400px) {
@@ -443,24 +310,7 @@ main > * {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.card-popover {
-  background: beige;
-  color: var(--color-surface);
-  max-width: 30rem;
-}
-
-/*bild i kort*/
-.panel img {
-  width: 100%;
-  height: 12rem;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.card-popover img {
-  height: auto;
-  max-height: 20rem;
-}
+/*FORSIDE*/
 
 .hero-section {
   display: grid;
@@ -502,47 +352,88 @@ main > * {
   margin-top: 2rem; /* Ändra denna siffra (t.ex. till 1.5rem eller 3rem) tills avståndet blir som du vill ha det */
 }
 
-/* Formulärelement */
-input[type="text"] {
-  width: fit-content;
-  box-sizing: border-box;
-  background: transparent;
-  border-radius: 5px;
-  border: 1px solid rgb(117, 26, 73);
+/*POPUP KORTEN (LÄS MER)*/
+.card-popover {
+  background: beige;
+  color: var(--color-surface);
+  max-width: 30rem;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-  outline: none;
-  border-color: #6b133b;
-  box-shadow: 0 0 5px rgba(149, 24, 95, 0.5);
+.card-popover img {
+  height: auto;
+  max-height: 20rem;
 }
 
-button {
-  width: fit-content;
-  border: none;
-  background: rgb(27, 110, 27);
-  color: var(--color-page);
-  padding: 0.4rem 1.5rem;
-  border-radius: 5px;
+/*INTERAKTIV SVG (kartan till vänster, accordion till höger*/
+
+.svg-page {
+  display: grid;
+  gap: var(--space-2);
 }
 
-input[type="radio"] {
-  accent-color: rgb(142, 19, 93);
-  margin: 0;
-  width: 1rem;
-  height: 1rem;
+.svg-intro {
+  display: grid;
+  gap: var(--space-1);
+  max-width: 60ch;
 }
 
-Fieldset {
-  padding: var(--space-1);
-  border-color: solid#5d1933;
-  border-radius: 5px;
+.svg-intro p {
+  color: var(--color-background);
 }
 
-/* Interaktiv SVG */
+.svg-layout {
+  display: grid;
+  gap: var(--space-2);
+  align-items: start;
+  @media (width > 800px) {
+    grid-template-columns: 1fr min(40%, 36ch);
+  }
+}
 
+/* Details - accordion */
+.accordion {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.accordion-item {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.accordion-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: var(--space-05) var(--space-1);
+  display: flex;
+  align-items: center;
+  font-family: "Bacasime Antique", serif;
+}
+
+/* Pil åt höger på vänster sida*/
+.accordion-item summary::after {
+  content: "›";
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-left: auto;
+  transition: rotate 0.3s;
+}
+
+/* pilen vrids nedåt när fliken är öppen */
+.accordion-item[open] summary::after {
+  rotate: 90deg;
+}
+
+.accordion-item p {
+  padding: 0 var(--space-1) var(--space-1);
+}
+
+/*döljer texten som java script skriver*/
+#besked {
+  display: none;
+}
+
+/*figuren som flyttar sig på kartan (java script sätter data positionen och CSS flyttar*/
 .svg-kort {
   --x: 0%;
   --y: 0%;
@@ -583,4 +474,116 @@ Fieldset {
   .figur {
     transition: none;
   }
+}
+
+/* Formulärelement */
+
+.form-intro {
+  display: grid;
+  gap: var(--space-1);
+  align-content: start;
+  max-width: 60ch;
+}
+
+.form-placeholder {
+  display: grid;
+  gap: var(--space-1);
+  align-self: start;
+  padding: var(--space-2);
+  border: 1px solid var(--color-surface);
+  color: var(--color-surface);
+}
+
+input[type="text"] {
+  width: fit-content;
+  box-sizing: border-box;
+  background: transparent;
+  border-radius: 5px;
+  border: 1px solid rgb(117, 26, 73);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #6b133b;
+  box-shadow: 0 0 5px rgba(149, 24, 95, 0.5);
+}
+
+input[type="radio"] {
+  accent-color: rgb(142, 19, 93);
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+}
+
+Fieldset {
+  padding: var(--space-1);
+  border-color: solid#5d1933;
+  border-radius: 5px;
+}
+
+/*OPSAMLING (BILJETTEN)*/
+/*text till vänster, biljett till höger*/
+.opsamling-page {
+  display: grid;
+  gap: var(--space-2);
+  align-items: start;
+
+  @media (width > 800px) {
+    grid-template-columns: minmax(0, 44ch) minmax(20rem, 1fr);
+  }
+}
+
+.opsamling-intro {
+  display: grid;
+  gap: var(--space-1);
+  max-width: 60ch;
+}
+
+/* Biljett */
+.ticket {
+  padding: var(--space-2);
+  display: grid;
+  gap: var(--space-1);
+  align-self: start;
+}
+
+.ticket-label {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+}
+
+.ticket h2 {
+  font-family: "Parisienne", cursive;
+  font-size: 2.5rem;
+}
+/*rubrik till vänster (dt), svar till höger (dd)*/
+.ticket dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-05) var(--space-2);
+  margin: 0;
+  padding-top: var(--space-1);
+  border-top: 1px solid var(--color-border);
+}
+
+.ticket dt {
+  color: var(--color-text);
+}
+
+.ticket dd {
+  margin: 0;
+}
+
+/*FELSIDA*/
+.error-page {
+  display: grid;
+  gap: var(--space-1);
+  max-width: 60ch;
+}
+
+.error-page p {
+  color: var(--color-page);
 }
