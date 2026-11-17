@@ -167,6 +167,40 @@ main > * {
   display: block;
 }
 
+/* Footer-kolumner */
+.footer-col {
+  display: grid;
+  gap: var(--space-05);
+  align-content: start;
+}
+
+.footer-col h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footer-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-05);
+}
+
+.footer-col a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+.site-footer .site-logo {
+  align-self: center;
+}
+
 /* Navigation */
 [popover] {
   margin: auto;
