@@ -1,3 +1,10 @@
+// Biljett på opsamlingssidan
+const params = new URLSearchParams(location.search);
+
+document.querySelectorAll("[data-field]").forEach((ruta) => {
+  ruta.textContent = params.get(ruta.dataset.field) || "–";
+});
+
 // Interaktiv SVG-side
 const kort = document.querySelector(".svg-kort");
 

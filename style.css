@@ -21,6 +21,7 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   grid-template-columns: minmax(1rlh, 1fr) minmax(0, 75rem) minmax(1rlh, 1fr);
+  font-size: 1.2rem;
 }
 
 h1,
@@ -77,7 +78,7 @@ main > * {
 
 .form-page {
   display: grid;
-  gap: var(--space-2);
+  gap: var(--space-3);
   @media (width > 600px) {
     grid-template-columns: min(40%, 50ch) 1fr;
   }
@@ -91,7 +92,7 @@ main > * {
 }
 
 .form-intro p {
-  color: var(--color-surface);
+  color: var(--color-background);
 }
 
 .opsamling-page {
@@ -111,7 +112,43 @@ main > * {
 }
 
 .opsamling-intro p {
-  color: var(--color-muted);
+  color: var(--color-background);
+}
+
+/* Biljett */
+.ticket {
+  padding: var(--space-2);
+  display: grid;
+  gap: var(--space-1);
+  align-self: start;
+}
+
+.ticket-label {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.9rem;
+}
+
+.ticket h2 {
+  font-family: "Parisienne", cursive;
+  font-size: 2.5rem;
+}
+
+.ticket dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-05) var(--space-2);
+  margin: 0;
+  padding-top: var(--space-1);
+  border-top: 1px solid var(--color-border);
+}
+
+.ticket dt {
+  color: var(--color-text);
+}
+
+.ticket dd {
+  margin: 0;
 }
 
 .error-page {
@@ -121,7 +158,7 @@ main > * {
 }
 
 .error-page p {
-  color: var(--color-muted);
+  color: var(--color-page);
 }
 
 /* Header og footer */
@@ -308,6 +345,7 @@ main > * {
 .opsamling-placeholder {
   min-height: -webkit-fill-available;
   min-height: stretch;
+  color: var(--color-page);
 }
 
 .form-placeholder {
