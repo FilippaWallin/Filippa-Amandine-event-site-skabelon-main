@@ -8,23 +8,29 @@ document.querySelectorAll("[data-field]").forEach((ruta) => {
 // Interaktiv SVG-side
 const kort = document.querySelector(".svg-kort");
 
-document
-  .querySelector("#details-indgang")
-  .addEventListener("toggle", opdaterFigur);
+if (kort) {
+  document
+    .querySelector("#details-indgang")
+    .addEventListener("toggle", opdaterFigur);
 
-document
-  .querySelector("#details-scen")
-  .addEventListener("toggle", opdaterFigur);
+  document
+    .querySelector("#details-scen")
+    .addEventListener("toggle", opdaterFigur);
 
-document.querySelector("#details-bar").addEventListener("toggle", opdaterFigur);
+  document
+    .querySelector("#details-bar")
+    .addEventListener("toggle", opdaterFigur);
 
-document
-  .querySelector("#details-vinylshop")
-  .addEventListener("toggle", opdaterFigur);
+  document
+    .querySelector("#details-vinylshop")
+    .addEventListener("toggle", opdaterFigur);
 
-document
-  .querySelector("#details-lounge")
-  .addEventListener("toggle", opdaterFigur);
+  document
+    .querySelector("#details-lounge")
+    .addEventListener("toggle", opdaterFigur);
+
+  opdaterFigur();
+}
 
 function opdaterFigur() {
   const aabent = document.querySelector(".accordion-item[open]");
@@ -38,8 +44,6 @@ function opdaterFigur() {
       "Alt er lukket. Figuren står ved indgangen.";
   }
 }
-
-opdaterFigur();
 
 // Opsamlingsside
 const opsamlingPlaceholder = document.querySelector(".opsamling-placeholder");

@@ -303,8 +303,6 @@ button {
   }
 }
 
-/*forside*/
-
 /*popover cards */
 .card-popover::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
