@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interaktiv SVG | Eventnavn</title>
+  <title>Program - The Purple Note</title>
   <link href="https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Parisienne&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./starter.css">
@@ -37,7 +37,7 @@
 
       <section class="svg-layout">
         <div class="svg-placeholder">
-          <svg class="svg-kort" viewBox="0 0 1920 1080">
+          <svg class="svg-kort" viewBox="0 0 1920 1080" role="img" aria-label="Karta över eventet">
             <use href="./image/karta.svg#scen"></use>
             <use href="./image/karta.svg#vinylshop"></use>
             <use href="./image/karta.svg#Lounge"></use>
@@ -48,38 +48,35 @@
         </div>
 
         <article class="panel">
-          <h2>Udforsk eventet</h2>
+          <h2>Utforska Eventet</h2>
           <div class="accordion">
-            <!-- TODO: Lav om til details/summary -->
 
             <details class="accordion-item" id="details-indgang" name="steder" data-position="indgang">
-              <Summary>Entre</Summary>
+              <summary>Entré</summary>
               <p>Här börjar ditt besök.</p>
             </details>
 
             <details class="accordion-item" id="details-scen" name="steder" data-position="scen">
-              <Summary>Scen</Summary>
-              <p>Vid scenen kan du höra live jazz under hela kvällen.</p>
+              <summary>Scen</summary>
+              <p>Vid scenen kan du höra livejazz under hela kvällen.</p>
             </details>
 
             <details class="accordion-item" id="details-vinylshop" name="steder" data-position="vinylshop">
-              <Summary>Vinylshop</Summary>
+              <summary>Vinylshop</summary>
               <p>Här kan du utforska och köpa unika handplockade vinyler.</p>
             </details>
 
             <details class="accordion-item" id="details-lounge" name="steder" data-position="lounge">
-              <Summary>Lounge</Summary>
-              <p>I loungen kan du slå dig ner med dina vänner och se våra jazz musiker spela under kvällens gång.</p>
+              <summary>Lounge</summary>
+              <p>I loungen kan du slå dig ner med dina vänner och se våra jazzmusiker spela under kvällens gång.</p>
             </details>
 
             <details class="accordion-item" id="details-bar" name="steder" data-position="bar">
-              <Summary>Bar</Summary>
-              <p>I baren hittar du ett utbud av viner och drinkar under eventets gång</p>
+              <summary>Bar</summary>
+              <p>I baren hittar du ett utbud av viner och drinkar under eventets gång.</p>
             </details>
           </div>
-          </div>
           <p id="besked"></p>
-        </article>
         </article>
       </section>
     </section>
@@ -92,19 +89,18 @@
       </a>
 
       <nav class="footer-col" aria-label="Footer">
-        <h3>Links</h3>
+        <h3>Länkar</h3>
         <ul>
-          <li><a href="./">Forside</a></li>
-          <li><a href="./svg.html">Interaktiv SVG</a></li>
-          <li><a href="./form.html">Formular</a></li>
+          <li><a href="./">Startsida</a></li>
+          <li><a href="./svg.html">Program</a></li>
+          <li><a href="./form.html">Biljetter</a></li>
         </ul>
       </nav>
 
       <div class="footer-col">
-        <h3>Hitta oss</h3>
+        <h3>Kontakt</h3>
         <ul>
-          <li>Instagram</li>
-          <li>Email</li>
+          <li>Telefon: 25116595</li>
           <li>Library Bar, Bernstorffsgade 4, 1570 København</li>
         </ul>
       </div>

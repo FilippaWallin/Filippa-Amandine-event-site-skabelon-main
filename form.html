@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Biljetter</title>
+  <title>Biljetter - The Purple Note</title>
   <link href="https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Parisienne&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="./starter.css">
@@ -32,33 +32,33 @@
     <section class="form-page">
       <header class="form-intro">
         <h1>Köp din biljett</h1>
-        <p>Fyll i formuläret och få din perosnliga biljett till The Purple Note. Vid köp av en biljett har du chansen
-          att vinna din favorit vinylplatta som lottas ut under kvällen.</p>
+        <p>Fyll i formuläret och få din personliga biljett till The Purple Note. Vid köp av en biljett har du chansen
+          att vinna din favoritvinylplatta som lottas ut under kvällen.</p>
         <img class="form-bild" src="image/IMG_4226.png" alt="tecknad jazzfigur">
       </header>
       <form class="form-placeholder" action="./opsamling.html">
         <label for="nickname">Namn</label>
-        <input type="text" id="nickname" name="nickname">
+        <input type="text" id="nickname" name="nickname" required>
 
         <label for="telefonnummer">Telefon</label>
-        <input type="text" id="telefonnummer" name="telefonnummer">
+        <input type="text" id="telefonnummer" name="telefonnummer" required>
 
         <label for="Email">Email</label>
-        <input type="text" id="Email" name="Email">
+        <input type="text" id="Email" name="Email" required>
 
         <fieldset>
           <legend>Vilken typ av jazz gillar du mest?</legend>
           <label for="klassisk-jazz">
             <input type="radio" id="klassisk-jazz" name="Jazz typ" value="Klassisk jazz">
-            Klasssisk Jazz
+            Klasssisk jazz
           </label>
           <label for="Jazzfusion">
             <input type="radio" id="Jazzfusion" name="Jazz typ" value="Jazzfusion">
             Jazzfusion
           </label>
           <label for="Modern-jazz">
-            <input type="radio" id="Modern-jazz" name="Jazz typ" value="Moderne jazz">
-            Moderne Jazz
+            <input type="radio" id="Modern-jazz" name="Jazz typ" value="Modern jazz">
+            Modern Jazz
           </label>
 
         </fieldset>
@@ -66,7 +66,7 @@
         <label for="field-vinyl">Vilken Vinylplatta önskar du helst att vinna?</label>
         <input type="text" id="field-vinyl" name="Vinyl">
 
-        <button type="submit">Send</button>
+        <button type="submit">Köp Biljett</button>
 
       </form>
     </section>
@@ -80,19 +80,18 @@
       </a>
 
       <nav class="footer-col" aria-label="Footer">
-        <h3>Links</h3>
+        <h3>Länkar</h3>
         <ul>
-          <li><a href="./">Forside</a></li>
-          <li><a href="./svg.html">Interaktiv SVG</a></li>
-          <li><a href="./form.html">Formular</a></li>
+          <li><a href="./">Startsida</a></li>
+          <li><a href="./svg.html">Program</a></li>
+          <li><a href="./form.html">Biljetter</a></li>
         </ul>
       </nav>
 
       <div class="footer-col">
-        <h3>Hitta oss</h3>
+        <h3>Kontakt</h3>
         <ul>
-          <li>Instagram</li>
-          <li>Email</li>
+          <li>Telefon: 25116595</li>
           <li>Library Bar, Bernstorffsgade 4, 1570 København</li>
         </ul>
       </div>
