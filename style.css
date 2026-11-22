@@ -174,9 +174,9 @@ main > * {
   background: var(--color-surface);
   box-shadow: 0 1rem 2rem #0002;
 
-  /*när meny knappen fälls ut under knappen och tonas in*/
+  /*när meny knappen fälls ut under knappen */
   @media (width <= 600px) {
-    position-area: bottom span-left;
+    position-area: bottom span-right;
     opacity: 0;
     transition: 0.5s;
     transition-behavior: allow-discrete;
@@ -289,7 +289,6 @@ button {
     display: none;
   }
   .menu-list {
-    /* Nulstil først, og byg derefter den vandrette liste */
     all: unset;
     display: flex;
     gap: 2ch;
@@ -347,7 +346,7 @@ button {
 .hero-buttons {
   display: flex;
   gap: var(--space-1);
-  margin-top: 2rem; /* Ändra denna siffra (t.ex. till 1.5rem eller 3rem) tills avståndet blir som du vill ha det */
+  margin-top: 2rem;
 }
 
 /*POPUP KORTEN (LÄS MER)*/
